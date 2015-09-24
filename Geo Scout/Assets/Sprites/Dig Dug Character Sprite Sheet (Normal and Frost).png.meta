@@ -1,0 +1,506 @@
+fileFormatVersion: 2
+guid: f84f12fa94575764cb4d9adcc06bea02
+timeCreated: 1443025026
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Dig Dug Character Sprite Sheet (Normal and Frost)_0
+    21300002: Dig Dug Character Sprite Sheet (Normal and Frost)_1
+    21300004: Dig Dug Character Sprite Sheet (Normal and Frost)_2
+    21300006: Dig Dug Character Sprite Sheet (Normal and Frost)_3
+    21300008: Dig Dug Character Sprite Sheet (Normal and Frost)_4
+    21300010: Dig Dug Character Sprite Sheet (Normal and Frost)_5
+    21300012: Dig Dug Character Sprite Sheet (Normal and Frost)_6
+    21300014: Dig Dug Character Sprite Sheet (Normal and Frost)_7
+    21300016: Dig Dug Character Sprite Sheet (Normal and Frost)_8
+    21300018: Dig Dug Character Sprite Sheet (Normal and Frost)_9
+    21300020: Dig Dug Character Sprite Sheet (Normal and Frost)_10
+    21300022: Dig Dug Character Sprite Sheet (Normal and Frost)_11
+    21300024: Dig Dug Character Sprite Sheet (Normal and Frost)_12
+    21300026: Dig Dug Character Sprite Sheet (Normal and Frost)_13
+    21300028: Dig Dug Character Sprite Sheet (Normal and Frost)_14
+    21300030: Dig Dug Character Sprite Sheet (Normal and Frost)_15
+    21300032: Dig Dug Character Sprite Sheet (Normal and Frost)_16
+    21300034: Dig Dug Character Sprite Sheet (Normal and Frost)_17
+    21300036: Dig Dug Character Sprite Sheet (Normal and Frost)_18
+    21300038: Dig Dug Character Sprite Sheet (Normal and Frost)_19
+    21300040: Dig Dug Character Sprite Sheet (Normal and Frost)_20
+    21300042: Dig Dug Character Sprite Sheet (Normal and Frost)_21
+    21300044: Dig Dug Character Sprite Sheet (Normal and Frost)_22
+    21300046: Dig Dug Character Sprite Sheet (Normal and Frost)_23
+    21300048: Dig Dug Character Sprite Sheet (Normal and Frost)_24
+    21300050: Dig Dug Character Sprite Sheet (Normal and Frost)_25
+    21300052: Dig Dug Character Sprite Sheet (Normal and Frost)_26
+    21300054: Dig Dug Character Sprite Sheet (Normal and Frost)_27
+    21300056: Dig Dug Character Sprite Sheet (Normal and Frost)_28
+    21300058: Dig Dug Character Sprite Sheet (Normal and Frost)_29
+    21300060: Dig Dug Character Sprite Sheet (Normal and Frost)_30
+    21300062: Dig Dug Character Sprite Sheet (Normal and Frost)_31
+    21300064: Dig Dug Character Sprite Sheet (Normal and Frost)_32
+    21300066: Dig Dug Character Sprite Sheet (Normal and Frost)_33
+    21300068: Dig Dug Character Sprite Sheet (Normal and Frost)_34
+    21300070: Dig Dug Character Sprite Sheet (Normal and Frost)_35
+    21300072: Dig Dug Character Sprite Sheet (Normal and Frost)_36
+    21300074: Dig Dug Character Sprite Sheet (Normal and Frost)_37
+    21300076: Dig Dug Character Sprite Sheet (Normal and Frost)_38
+    21300078: Dig Dug Character Sprite Sheet (Normal and Frost)_39
+    21300080: Dig Dug Character Sprite Sheet (Normal and Frost)_40
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1711
+        width: 178
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_1
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1708
+        width: 184
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_2
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 1693
+        width: 186
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_3
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1698
+        width: 173
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_4
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1693
+        width: 181
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_5
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1688
+        width: 144
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_6
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 1791
+        width: 87
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1438
+        width: 164
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_8
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 1440
+        width: 214
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_9
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1593
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_10
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1432
+        width: 228
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_11
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1423
+        width: 165
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_12
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 1505
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_13
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1507
+        width: 6
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_14
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1505
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_15
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 1491
+        width: 42
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_16
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 1491
+        width: 43
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_17
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1456
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_18
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1432
+        width: 6
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_19
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 1456
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_20
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1423
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_21
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1142
+        width: 178
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_22
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 1139
+        width: 184
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_23
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1124
+        width: 186
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_24
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1129
+        width: 173
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_25
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1124
+        width: 181
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_26
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1119
+        width: 144
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_27
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 869
+        width: 164
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_28
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 871
+        width: 214
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_29
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1024
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_30
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 863
+        width: 228
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_31
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 854
+        width: 165
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_32
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 936
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_33
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 938
+        width: 6
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_34
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 936
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_35
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 922
+        width: 42
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_36
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 922
+        width: 43
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_37
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 887
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_38
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 863
+        width: 6
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_39
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 887
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dig Dug Character Sprite Sheet (Normal and Frost)_40
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 854
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
