@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{F4617EC5-ADB8-D72D-600C-99D8FF5AD98E}") = "Geo Scout", "Assembly-CSharp.csproj", "{B73D50DA-AB60-A727-1E45-64E6DCC590BF}"
 EndProject
+Project("{F4617EC5-ADB8-D72D-600C-99D8FF5AD98E}") = "Geo Scout", "Assembly-CSharp-Editor.csproj", "{4161AA54-CF94-7509-5BAF-6582EE95DE91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{B73D50DA-AB60-A727-1E45-64E6DCC590BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B73D50DA-AB60-A727-1E45-64E6DCC590BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B73D50DA-AB60-A727-1E45-64E6DCC590BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4161AA54-CF94-7509-5BAF-6582EE95DE91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4161AA54-CF94-7509-5BAF-6582EE95DE91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4161AA54-CF94-7509-5BAF-6582EE95DE91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4161AA54-CF94-7509-5BAF-6582EE95DE91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
+				GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -36,4 +42,5 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
+
 EndGlobal

@@ -46,6 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MF2D\Example\Script\turn.cs" />
+     <Compile Include="Assets\MF2D\Plugins\LayerOrderFilter.cs" />
+     <Compile Include="Assets\MF2D\Plugins\Mouse.cs" />
+     <Compile Include="Assets\MF2D\Plugins\SortingLayerFilter.cs" />
+     <Compile Include="Assets\MF2D\Plugins\TextureScale.cs" />
+     <Compile Include="Assets\MF2D\Plugins\Tile.cs" />
+     <Compile Include="Assets\MF2D\Plugins\TileMap.cs" />
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Dig.cs" />
      <Compile Include="Assets\Scripts\Enemies.cs" />
@@ -56,6 +63,7 @@
      <Compile Include="Assets\Scripts\PlaySong.cs" />
      <Compile Include="Assets\Scripts\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
+     <None Include="Assets\MF2D\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
