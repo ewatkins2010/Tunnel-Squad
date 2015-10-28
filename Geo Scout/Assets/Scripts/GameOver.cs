@@ -13,11 +13,11 @@ public class GameOver : MonoBehaviour {
 	
 	}
 
-	public void Restart(){
+	public void ReturnToTitleScreen(){
 		Application.LoadLevel (0);
 	}
 
-	public void Refresh(){
+	public void RestartGame(){
 		Application.LoadLevel (1);
 	}
 }

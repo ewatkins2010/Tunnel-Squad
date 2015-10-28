@@ -1,66 +1,124 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Enemies : MonoBehaviour {
-	public bool canUp, canLeft, canRight, canDown, sucked;
 	public int powerIndex, reward;
+	public bool isMoving, hasTarget;
 
+    public float speed;
 
-    public LayerMask enemyMask;
-    public float speed = 2;
+	Vector2 targetPos;
+	bool canUp, canLeft, canRight, canDown;
+	int rand;
+	List <Vector2> targets = new List<Vector2>();
+
     Rigidbody2D myBody;
     Transform myTrans;
     float myWidth;
+	GameObject player;
 
 
     // Use this for initialization
     void Start () {
-
-        myTrans = this.transform;
-        myBody = this.GetComponent<Rigidbody2D>();
-        myWidth = this.GetComponent<BoxCollider2D>().bounds.extents.x;
-
+		canUp = canDown = canLeft = canRight = false;
+		isMoving = false;
+		player = GameObject.Find ("Player");
     }
 	
 	// Update is called once per frame
 	void Update () {
-
-        //draws horizontal line
-        Vector2 lineCastPos1 = myTrans.position - myTrans.right * myWidth;
-        Debug.DrawLine(lineCastPos1, lineCastPos1 - myTrans.right.toVector2() * .1f);
-        bool isBlockedH = Physics2D.Linecast(lineCastPos1, lineCastPos1 - myTrans.right.toVector2() * .1f, enemyMask);
-
-        //draws vertical line
-        Vector2 lineCastPos2 = myTrans.position - myTrans.up * myWidth;
-        Debug.DrawLine(lineCastPos2, lineCastPos2 - myTrans.up.toVector2() * .1f);
-        bool isBlockedU = Physics2D.Linecast(lineCastPos2, lineCastPos2 - myTrans.up.toVector2() * .1f, enemyMask);
-
-
-        //if blocked horizontally then rotate 180 degrees
-       // if (isBlockedH)
-       // {
-        //    Vector3 currRot = myTrans.eulerAngles;
-        //   currRot.y += 180;
-        //  myTrans.eulerAngles = currRot;
-
-       // }
-
-
-       // if (isBlockedU)
-       // {
-        //    Vector3 currRot = myTrans.eulerAngles;
-        //    currRot.x += 180;
-        //    myTrans.eulerAngles = currRot;
-       // }
-
-
-
-        //moving forward
-        Vector2 myVel = myBody.velocity;
-        myVel.x = -myTrans.right.x * speed;
-        myVel.y = -myTrans.up.y * speed;
-        myBody.velocity = myVel;
+		Move ();
     }
 
+	public void CheckDirection(){
+		Vector2 upStart, leftStart, downStart, rightStart;
 
+		upStart = new Vector2 (transform.position.x, transform.position.y + 5f);
+		leftStart = new Vector2 (transform.position.x - 5f, transform.position.y);
+		downStart = new Vector2 (transform.position.x, transform.position.y - 5f);
+		rightStart = new Vector2 (transform.position.x + 5f, transform.position.y);
+
+		Debug.DrawRay(upStart, Vector2.up*10f, Color.red);
+		Debug.DrawRay(downStart, Vector2.down*10f, Color.red);
+		Debug.DrawRay(leftStart, Vector2.left*10f, Color.red);
+		Debug.DrawRay(rightStart, Vector2.right*10f, Color.red);
+
+		RaycastHit2D upHit = Physics2D.Raycast (upStart, Vector2.up, 9f);
+		if (upHit.collider != null) {
+			if (upHit.collider.gameObject.tag == "Dirt" || upHit.collider.gameObject.tag == "Barrier"){
+				canUp = false;
+			}
+			else
+				canUp = true;
+		}
+		else
+			canUp = true;
+
+		RaycastHit2D downHit = Physics2D.Raycast (downStart, Vector2.down, 9f);
+		if (downHit.collider != null) {
+			if (downHit.collider.gameObject.tag == "Dirt" || downHit.collider.gameObject.tag == "Barrier") {
+				canDown = false;
+			} else 
+				canDown = true;
+		} 
+		else
+			canDown = true;
+
+		RaycastHit2D leftHit = Physics2D.Raycast (leftStart, Vector2.left, 9f);
+		if (leftHit.collider != null) {
+			if (leftHit.collider.gameObject.tag == "Dirt" || leftHit.collider.gameObject.tag == "Barrier") {
+				canLeft = false;
+			}
+			else
+				canLeft = true;
+		} 
+		else
+			canLeft = true;
+
+		RaycastHit2D rightHit = Physics2D.Raycast (rightStart, Vector2.right, 9f);
+		if (rightHit.collider != null) {
+			if (rightHit.collider.gameObject.tag == "Dirt" || rightHit.collider.gameObject.tag == "Barrier"){
+				canRight = false;
+			}
+			else 
+				canRight = true;
+		}
+		else 
+			canRight = true;
+
+		Vector2 upTarget = new Vector2 (transform.position.x, transform.position.y + 10f);
+		Vector2 downTarget = new Vector2 (transform.position.x, transform.position.y - 10f);
+		Vector2 leftTarget = new Vector2 (transform.position.x - 10f, transform.position.y);
+		Vector2 rightTarget = new Vector2 (transform.position.x + 10f, transform.position.y);
+
+		if (canUp)
+			targets.Add (upTarget);
+		if (canDown)
+			targets.Add (downTarget);
+		if (canLeft)
+			targets.Add (leftTarget);
+		if (canRight)
+			targets.Add (rightTarget);
+		Debug.Log ((int)targets.Count);
+		rand = Random.Range (0, (int)targets.Count);
+
+		if (targets.Count > 0)
+			targetPos = targets [rand];
+		targets.Clear ();
+	}
+
+	void Move(){
+		if (!isMoving) {
+			CheckDirection ();
+			isMoving = true;
+		}
+		else {
+			if(!player.GetComponent<CharacterMovement>().isDead){
+				transform.position = Vector2.MoveTowards (transform.position,targetPos,speed*Time.deltaTime);
+				if ((Vector2)transform.position == targetPos)
+					isMoving = false;
+			}
+		}
+	}
 }

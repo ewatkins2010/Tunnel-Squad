@@ -8,16 +8,28 @@ public class HUD : MonoBehaviour {
 	public GameObject[] lives;
 	public GameObject[] powers;
 	public Text scoreDisplay;
+	public Text levelDisplay;
+	public GameObject instance;
+	public GameObject manager;
 	// Use this for initialization
+	void Awake(){
+		manager = GameObject.FindGameObjectWithTag ("GameManager");
+		if (manager == null) {
+			manager = Instantiate (instance, new Vector3(0,0,0), transform.rotation) as GameObject;
+		}
+	}
 	void Start () {
-		score = 0;
-		numLives = 3;
 		SwapPowers (0);
+
+		manager.GetComponent<GameManager> ().SpawnObjects ();
+		score = manager.GetComponent<GameManager> ().score;
+		numLives = manager.GetComponent<GameManager> ().lives;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		scoreDisplay.text = score + "";
+		levelDisplay.text = manager.GetComponent<GameManager> ().level + "";
 		CheckLives ();
 	}
 

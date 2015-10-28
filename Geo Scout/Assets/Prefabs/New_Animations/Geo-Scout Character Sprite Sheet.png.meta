@@ -1,0 +1,284 @@
+fileFormatVersion: 2
+guid: 78d83191d416544f983e556aa6a4b81e
+timeCreated: 1445755013
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Geo-Scout Character Sprite Sheet_9
+    21300002: Geo-Scout Character Sprite Sheet_20
+    21300004: Geo-Scout Character Sprite Sheet_40
+    21300006: Geo-Scout Character Sprite Sheet_41
+    21300008: Geo-Scout Character Sprite Sheet_42
+    21300010: Geo-Scout Character Sprite Sheet_43
+    21300012: Geo-Scout Character Sprite Sheet_44
+    21300014: Geo-Scout Character Sprite Sheet_45
+    21300016: Geo-Scout Character Sprite Sheet_46
+    21300018: Geo-Scout Character Sprite Sheet_47
+    21300020: Geo-Scout Character Sprite Sheet_48
+    21300022: Geo-Scout Character Sprite Sheet_49
+    21300024: Geo-Scout Character Sprite Sheet_50
+    21300026: Geo-Scout Character Sprite Sheet_51
+    21300028: Geo-Scout Character Sprite Sheet_52
+    21300030: Geo-Scout Character Sprite Sheet_53
+    21300032: Geo-Scout Character Sprite Sheet_54
+    21300034: Geo-Scout Character Sprite Sheet_55
+    21300036: Geo-Scout Character Sprite Sheet_56
+    21300038: Geo-Scout Character Sprite Sheet_57
+    21300040: Geo-Scout Character Sprite Sheet_58
+    21300042: Geo-Scout Character Sprite Sheet_59
+    21300044: Geo-Scout Character Sprite Sheet_60
+    21300046: Geo-Scout Character Sprite Sheet_61
+    21300048: Geo-Scout Character Sprite Sheet_62
+    21300050: Geo-Scout Character Sprite Sheet_63
+    21300052: Geo-Scout Character Sprite Sheet_64
+    21300054: Geo-Scout Character Sprite Sheet_65
+    21300056: Geo-Scout Character Sprite Sheet_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Geo-Scout Character Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1593
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1423
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 854
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 588
+        width: 178
+        height: 241
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 585
+        width: 184
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 570
+        width: 186
+        height: 249
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 575
+        width: 173
+        height: 236
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 570
+        width: 181
+        height: 236
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 306
+        width: 178
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 302
+        width: 184
+        height: 239
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 287
+        width: 186
+        height: 249
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 293
+        width: 173
+        height: 234
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 287
+        width: 181
+        height: 235
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 282
+        width: 144
+        height: 106
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 33
+        width: 164
+        height: 239
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 34
+        width: 215
+        height: 221
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 26
+        width: 224
+        height: 156
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 15
+        width: 168
+        height: 130
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 17
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Geo-Scout Character Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 27
+        width: 118
+        height: 120
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

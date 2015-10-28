@@ -5,26 +5,27 @@ public class CharacterMovement : MonoBehaviour {
 	public float speed, playerX, playerY, playerZ;
 	public float vInput, hInput;
 	public Vector3 uPos, dPos, lPos, rPos, currPos, targetPos;
-	public Transform respawnPoint;
 	public bool hasTarget, isRight,isUp, isDead, isHard;
-	public Animation a;
 	public AudioSource death;
 	GameObject HUD;
-
+	Vector3 flipped, normal;
+	Animator a;
 	// Use this for initialization
 	void Start () {
-		a = GetComponent<Animation> ();
+		a = GetComponent<Animator> ();
 		HUD = GameObject.Find ("HUD");
 		currPos = transform.position;
 		hasTarget = false;
 		isRight = false;
 		isDead = false;
 		isHard = false;
+		normal = flipped = transform.localScale;
+		flipped.x = -flipped.x;
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-		if (!a.isPlaying && !isDead) {
+	void Update () {
+		if (!isDead) {
 			vInput = Input.GetAxis ("Vertical");
 			hInput = Input.GetAxis ("Horizontal");
 		}
@@ -34,10 +35,16 @@ public class CharacterMovement : MonoBehaviour {
 	}
 
 	void CheckDirection(){
-		if (hInput < 0)
+		if (hInput < 0) {
 			isRight = false;
-		else if (hInput > 0)
+			//transform.rotation = Quaternion.Euler (0,0,0);
+			transform.localScale = normal;
+		}
+		else if (hInput > 0) {
 			isRight = true;
+			//transform.rotation = Quaternion.Euler (0,180,0);
+			transform.localScale = flipped;
+		}
 
 		if (vInput < 0)
 			isUp = false;
@@ -125,12 +132,15 @@ public class CharacterMovement : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col){
 		if (col.gameObject.tag == "Barrier") {
+			vInput = hInput = 0f;
 			transform.position = currPos;
 			targetPos = currPos;
 		} 
 		else if (col.gameObject.tag == "Enemy") {
-			if (!isHard)
+			if (!isHard){
+				a.SetTrigger ("Death");
 				StartCoroutine ("Death");
+			}
 		}
 	}
 
@@ -146,8 +156,9 @@ public class CharacterMovement : MonoBehaviour {
 			Application.LoadLevel (2);
 		}
 		else {
-			transform.position = respawnPoint.position;
+			HUD.GetComponent<HUD>().manager.GetComponent<GameManager>().ResetPositions();
 			isDead = false;
+			a.SetTrigger ("Respawn");
 		}
 	}
 }
