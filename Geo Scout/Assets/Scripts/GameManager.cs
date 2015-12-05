@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
-	public GameObject firstGem;
+	public GameObject[] first;
 	public GameObject[] emptySets;
 	public GameObject[] enemies;
 	public int level, score, lives;
@@ -23,22 +23,25 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKeyDown (KeyCode.Alpha3))
+			Application.Quit ();
 	}
 
-	void OnLevelWasLoaded(int level){
-		if (level == 2) {
+	void OnLevelWasLoaded(int lvl){
+		if (lvl == 2) {
 			lives = 3;
 			score = 0;
 			level = 1;
 		}
-		if (level == 1)
+		if (lvl == 1 && level > 1) {
 			StartCoroutine ("SpawnGems");
+		}
 	}
 
 	IEnumerator SpawnGems(){
-		yield return new WaitForSeconds (4f);
-		Instantiate (firstGem, new Vector3 (Random.Range (5, 155), Random.Range (-5, -95), 0), firstGem.transform.rotation);
+		yield return new WaitForSeconds (2f);
+		int random = Random.Range (0, first.Length-1);
+		Instantiate (first[random], new Vector3 (Random.Range (5, 155), Random.Range (-5, -95), 0), first[random].transform.rotation);
 	}
 
 	public void SpawnObjects(){
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour {
 	public void ResetPositions(){
 		GameObject player = GameObject.Find ("Player");
 		player.transform.position = new Vector3 (85, -45, 0);
+		player.transform.rotation = Quaternion.Euler (0, 0, 0);
 		GameObject[] e = GameObject.FindGameObjectsWithTag ("Enemy");
 
 		for (int i = 0; i < e.Length; i++) {

@@ -26,9 +26,6 @@ public class Enemies : MonoBehaviour {
 		canUp = canDown = canLeft = canRight = false;
 		isMoving = false;
 		player = GameObject.Find ("Player");
-
-        
-
     }
 	
 	// Update is called once per frame
@@ -135,7 +132,6 @@ public class Enemies : MonoBehaviour {
             targets.Add(leftTarget);
         if (canRight)
             targets.Add(rightTarget);
-        Debug.Log((int)targets.Count);
         rand = Random.Range(0, (int)targets.Count);
 
         if (targets.Count > 0)

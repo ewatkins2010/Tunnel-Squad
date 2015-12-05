@@ -2,139 +2,83 @@
 using System.Collections;
 
 public class CharacterMovement : MonoBehaviour {
-	public float speed, playerX, playerY, playerZ;
-	public float vInput, hInput;
-	public Vector3 uPos, dPos, lPos, rPos, currPos, targetPos;
-	public bool hasTarget, isRight,isUp, isDead, isHard;
+	public float speed;
+	[HideInInspector]public float vInput, hInput;
+	public bool isRight,isUp,isLeft,isDown, isDead, isHard;
 	public AudioSource death;
+	PlayerAttack pAttack;
 	GameObject HUD;
-	Vector3 flipped, normal;
 	Animator a;
 	// Use this for initialization
 	void Start () {
+		pAttack = GetComponent<PlayerAttack> ();
 		a = GetComponent<Animator> ();
 		HUD = GameObject.Find ("HUD");
-		currPos = transform.position;
-		hasTarget = false;
-		isRight = false;
+		isLeft = true;
+		isRight = isUp = isDown = false;
 		isDead = false;
 		isHard = false;
-		normal = flipped = transform.localScale;
-		flipped.x = -flipped.x;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!isDead) {
+		if (!isDead && !pAttack.isSucking) {
 			vInput = Input.GetAxis ("Vertical");
 			hInput = Input.GetAxis ("Horizontal");
+		} else {
+			vInput = hInput = 0f;
 		}
-		CheckDirection ();
-		CheckTarget ();
-		Move ();
+		Move2 ();
 	}
 
-	void CheckDirection(){
+	void Move2(){
+		Vector3 movement = Vector3.zero;
+
 		if (hInput < 0) {
-			isRight = false;
-			//transform.rotation = Quaternion.Euler (0,0,0);
-			transform.localScale = normal;
-		}
-		else if (hInput > 0) {
+			a.SetBool ("Walk", true);
+			isLeft = true;
+			isRight = isUp = isDown = false;
+			movement.x -= speed * Time.deltaTime;
+			transform.position += movement;
+			transform.rotation = Quaternion.Euler (0, 0, 0);
+			movement = Vector3.zero;
+		} else if (hInput > 0) {
+			a.SetBool ("Walk", true);
 			isRight = true;
-			//transform.rotation = Quaternion.Euler (0,180,0);
-			transform.localScale = flipped;
-		}
-
-		if (vInput < 0)
+			isLeft = isUp = isDown = false;
+			movement.x += speed * Time.deltaTime;
+			transform.rotation = Quaternion.Euler (0, 180, 0);
+			transform.position += movement;
+			movement = Vector3.zero;
+		} else if (vInput < 0) {
+			a.SetBool ("Walk", true);
+			isDown = true;
 			isUp = false;
-		else if (vInput > 0)
+			movement.y -= speed * Time.deltaTime;
+			if (isRight)
+				transform.rotation = Quaternion.Euler (0, 180, 90);
+			else
+				transform.rotation = Quaternion.Euler (0, 0, 90);
+			transform.position += movement;
+			movement = Vector3.zero;
+		} else if (vInput > 0) {
+			a.SetBool ("Walk", true);
 			isUp = true;
-	}
-
-	void CheckTarget(){
-		if (!hasTarget) {
-			playerX = transform.position.x;
-			playerY = transform.position.y;
-			playerZ = transform.position.z;
-			
-			uPos = new Vector3 (playerX, playerY + 10f, playerZ);
-			dPos = new Vector3 (playerX, playerY - 10f, playerZ);
-			lPos = new Vector3 (playerX - 10f, playerY, playerZ);
-			rPos = new Vector3 (playerX + 10f, playerY, playerZ);
-			currPos = transform.position;
-
-			if (hInput < 0){
-				targetPos = lPos;
-				hasTarget = true;
-				return;
-			}
-
-			if (hInput > 0){
-				targetPos = rPos;
-				hasTarget = true;
-				return;
-			}
-
-			if (vInput < 0){
-				targetPos = dPos;
-				hasTarget = true;
-				return;
-			}
-
-			if (vInput > 0){
-				targetPos = uPos;
-				hasTarget = true;
-				return;
-			}
-		}
-	}
-
-	void Move(){
-		if (hasTarget) {
-			if (targetPos == uPos) {
-				if (vInput > 0)
-					transform.position = Vector3.MoveTowards(transform.position, targetPos, speed*Time.deltaTime);
-				else if (vInput < 0)
-					transform.position = Vector3.MoveTowards(transform.position, currPos, speed*Time.deltaTime);
-				else if(hInput < 0 || hInput > 0)
-					transform.position = Vector3.MoveTowards(transform.position, targetPos, speed*Time.deltaTime);
-			}
-			else if(targetPos == dPos){
-				if (vInput < 0)
-					transform.position = Vector3.MoveTowards(transform.position, targetPos, speed*Time.deltaTime);
-				else if (vInput > 0)
-					transform.position = Vector3.MoveTowards(transform.position, currPos, speed*Time.deltaTime);
-				else if(hInput < 0 || hInput > 0)
-					transform.position = Vector3.MoveTowards(transform.position, targetPos, speed*Time.deltaTime);
-			}
-			else if (targetPos == lPos){
-				if (hInput < 0)
-					transform.position = Vector3.MoveTowards(transform.position, targetPos, speed*Time.deltaTime);
-				else if (hInput > 0)
-					transform.position = Vector3.MoveTowards(transform.position, currPos, speed*Time.deltaTime);
-				else if(vInput < 0 || vInput > 0)
-					transform.position = Vector3.MoveTowards(transform.position, targetPos, speed*Time.deltaTime);
-			}
-			else if (targetPos == rPos){
-				if (hInput > 0)
-					transform.position = Vector3.MoveTowards(transform.position, targetPos, speed*Time.deltaTime);
-				else if (hInput < 0)
-					transform.position = Vector3.MoveTowards(transform.position, currPos, speed*Time.deltaTime);
-				else if(vInput < 0 || vInput > 0)
-					transform.position = Vector3.MoveTowards(transform.position, targetPos, speed*Time.deltaTime);
-			}
-		}
-
-		if (transform.position == targetPos || transform.position == currPos)
-			hasTarget = false;
+			isDown = false;
+			movement.y += speed * Time.deltaTime;
+			if (isRight)
+				transform.rotation = Quaternion.Euler (0, 180, -90);
+			else
+				transform.rotation = Quaternion.Euler (0, 0, -90);
+			transform.position += movement;
+			movement = Vector3.zero;
+		} else 
+			a.SetBool ("Walk", false);
 	}
 
 	void OnCollisionEnter2D (Collision2D col){
 		if (col.gameObject.tag == "Barrier") {
 			vInput = hInput = 0f;
-			transform.position = currPos;
-			targetPos = currPos;
 		} 
 		else if (col.gameObject.tag == "Enemy") {
 			if (!isHard){
@@ -146,9 +90,9 @@ public class CharacterMovement : MonoBehaviour {
 
 	IEnumerator Death(){
 		isDead = true;
-		hasTarget = false;
 		vInput = hInput = 0f;
 		HUD.GetComponent<HUD> ().numLives--;
+		GetComponent<CircleCollider2D> ().enabled = false;
 		death.Play ();
 		yield return new WaitForSeconds (3f);
 
@@ -156,6 +100,7 @@ public class CharacterMovement : MonoBehaviour {
 			Application.LoadLevel (2);
 		}
 		else {
+			GetComponent<CircleCollider2D>().enabled = true;
 			HUD.GetComponent<HUD>().manager.GetComponent<GameManager>().ResetPositions();
 			isDead = false;
 			a.SetTrigger ("Respawn");

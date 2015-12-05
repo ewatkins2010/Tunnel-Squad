@@ -3,8 +3,9 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour {
 	public GameObject[] powers;
+	public GameObject vacuum;
 	public int currPower;
-	public bool statsUp;
+	public bool statsUp, isSucking;
 	CharacterMovement pMove;
 	GameObject HUD;
 	Animator a;
@@ -23,45 +24,68 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void Attack(){
-		if (Input.GetKeyDown (KeyCode.Z)) {
-			switch(currPower){
-			case 0:
-				a.SetTrigger ("Suck");
-				if (pMove.isRight)
-					Instantiate (powers[0], new Vector3(transform.position.x + 5, transform.position.y, 0), transform.rotation);
-				else
-					Instantiate (powers[0], new Vector3(transform.position.x - 5, transform.position.y, 0), transform.rotation);
-					break;
-			case 1:
-				a.SetBool ("PowerDown",false);
+		switch(currPower){
+		case 0:
+			a.SetBool ("PowerDown", false);
+			if (Input.GetKey (KeyCode.U)){
+				isSucking = true;
+				a.SetBool ("Suck", true);
+				vacuum.SetActive(true);
+			}
+			else{
+				isSucking = false;
+				a.SetBool ("Suck",false);
+				vacuum.SetActive (false);
+			}
+			break;
+		case 1:
+			a.SetBool ("PowerDown", false);
+			isSucking = false;
+			a.SetBool ("Suck",false);
+			vacuum.SetActive (false);
+			if (Input.GetKeyDown (KeyCode.U)) {
 				a.SetTrigger ("Blue");
-				if (pMove.isRight)
-					Instantiate (powers[1], new Vector3(transform.position.x + 5, transform.position.y, 0), transform.rotation);
-				else
-					Instantiate (powers[1], new Vector3(transform.position.x - 5, transform.position.y, 0), transform.rotation);
+				if (pMove.isUp)
+					Instantiate (powers[1],transform.position+ (Vector3.up*5), transform.rotation);
+				else if(pMove.isDown)
+					Instantiate (powers[1],transform.position+ (Vector3.down*5), transform.rotation);
+				else if(pMove.isLeft && !pMove.isDown && !pMove.isUp)
+					Instantiate (powers[1],transform.position+ (Vector3.left*5), transform.rotation);
+				else if (pMove.isRight && !pMove.isDown && !pMove.isUp)
+					Instantiate (powers[1],transform.position+ (Vector3.right*5), transform.rotation);
 				StartCoroutine ("PowerTime");
-				break;
-			case 2:
+			}
+			break;
+		case 2:
+			isSucking = false;
+			a.SetBool ("Suck",false);
+			vacuum.SetActive (false);
+			if (Input.GetKeyDown (KeyCode.U)){
 				if (!statsUp){
-					a.SetBool ("PowerDown",false);
+					a.SetBool ("PowerDown", false);
 					a.SetTrigger ("Yellow");
 					statsUp = true;
 					pMove.isHard = true;
 					StartCoroutine ("PowerTime");
 				}
-				break;
-			case 3:
+			}
+			break;
+		case 3:
+			isSucking = false;
+			a.SetBool ("Suck",false);
+			vacuum.SetActive (false);
+			if (Input.GetKeyDown (KeyCode.U)){
 				if (!statsUp){
-					a.SetBool ("PowerDown",false);
+					a.SetBool ("PowerDown", false);
 					a.SetTrigger ("Purple");
 					statsUp = true;
 					pMove.speed = 25;
 					StartCoroutine ("PowerTime");
 				}
-				break;
-			default:
-				break;
 			}
+			break;
+		default:
+			break;
 		}
 	}
 
@@ -73,6 +97,5 @@ public class PlayerAttack : MonoBehaviour {
 		currPower = 0;
 		a.SetBool ("PowerDown", true);
 		HUD.GetComponent<HUD> ().SwapPowers (0);
-
 	}
 }

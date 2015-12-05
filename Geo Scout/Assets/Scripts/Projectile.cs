@@ -9,20 +9,19 @@ public class Projectile : MonoBehaviour {
 	GameObject HUD;
 	// Use this for initialization
 	void Start () {
-		Destroy (gameObject, 1f);
-
 		player = GameObject.FindGameObjectWithTag ("Player");
 		pAttack = player.GetComponent<PlayerAttack> ();
 		pMove = player.GetComponent<CharacterMovement> ();
 		HUD = GameObject.Find ("HUD");
-
-		if (projectileIndex == 0)
-			transform.SetParent (GameObject.FindGameObjectWithTag ("Player").transform);
-		else {
-			if (pMove.isRight)
+		if (projectileIndex == 1) {
+			if (pMove.isRight && !pMove.isDown && !pMove.isUp)
 				GetComponent<Rigidbody2D> ().AddForce (Vector2.right * 4000f);
-			else
-				GetComponent<Rigidbody2D> ().AddForce (Vector2.right * -4000f);
+			else if (pMove.isLeft && !pMove.isDown && !pMove.isUp)
+				GetComponent<Rigidbody2D> ().AddForce (Vector2.left * 4000f);
+			else if (pMove.isUp)
+				GetComponent<Rigidbody2D> ().AddForce (Vector2.up * 4000f);
+			else if (pMove.isDown)
+				GetComponent<Rigidbody2D> ().AddForce (Vector2.down * 4000f);
 		}
 	}
 	// Update is called once per frame
