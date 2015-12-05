@@ -2,32 +2,27 @@
 using System.Collections;
 
 public class PlaySong : MonoBehaviour {
-	public bool isPaused;
 	public GameObject player;
+	bool isPaused;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
-		isPaused = true;
-		GetComponent<AudioSource> ().Play ();
-		GetComponent<AudioSource> ().Pause ();
+		isPaused = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.GetComponent<CharacterMovement> ().isDead) {
+		if (player.GetComponent<CharacterMovement> ().isDead || player.GetComponent<CircleCollider2D>().enabled == false) {
 			GetComponent<AudioSource> ().Stop ();
 			GetComponent<AudioSource> ().Play ();
 			GetComponent<AudioSource> ().Pause ();
-		}
-		if (player.GetComponent<CharacterMovement>().vInput != 0 || player.GetComponent<CharacterMovement>().hInput != 0) {
-			if (isPaused){
-				GetComponent<AudioSource>().UnPause ();
-				isPaused = false;
-			}
+			isPaused = true;
 		}
 		else {
-			isPaused = true;
-			GetComponent<AudioSource>().Pause ();
+			if (isPaused){
+				GetComponent<AudioSource>().Play ();
+				isPaused = false;
+			}
 		}
 	}
 	

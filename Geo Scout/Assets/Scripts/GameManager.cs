@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 	int set;
 	AudioSource a;
 	void Awake(){
-		StartCoroutine ("SpawnGems");
+
 		DontDestroyOnLoad (gameObject);
 		score = 0;
 		level = 1;
@@ -25,6 +25,19 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Alpha3))
 			Application.Quit ();
+
+		if (Application.loadedLevel == 1) {
+			GameObject[] e = GameObject.FindGameObjectsWithTag ("Enemy");
+			if (e.Length == 0)
+				SpawnEnemies();
+		}
+	}
+
+	void SpawnEnemies(){
+		foreach (Transform child in emptySets[set].transform) {
+			int eIndex = Random.Range (0, enemies.Length-1);
+			Instantiate (enemies[eIndex],child.position,transform.rotation);
+		}
 	}
 
 	void OnLevelWasLoaded(int lvl){
@@ -33,13 +46,9 @@ public class GameManager : MonoBehaviour {
 			score = 0;
 			level = 1;
 		}
-		if (lvl == 1 && level > 1) {
-			StartCoroutine ("SpawnGems");
-		}
 	}
 
-	IEnumerator SpawnGems(){
-		yield return new WaitForSeconds (2f);
+	public void SpawnGems(){
 		int random = Random.Range (0, first.Length-1);
 		Instantiate (first[random], new Vector3 (Random.Range (5, 155), Random.Range (-5, -95), 0), first[random].transform.rotation);
 	}

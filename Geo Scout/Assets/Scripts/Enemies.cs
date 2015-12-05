@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Enemies : MonoBehaviour {
 	public int powerIndex, reward;
-	public bool isMoving, hasTarget;
+	public bool isMoving, isTracking, hasTarget;
 
     public float speed;
 
@@ -17,22 +17,23 @@ public class Enemies : MonoBehaviour {
     Transform myTrans;
     float myWidth;
 	GameObject player;
-
-    
-
+	Animator a;
 
     // Use this for initialization
     void Start () {
+		a = GetComponent<Animator> ();
 		canUp = canDown = canLeft = canRight = false;
 		isMoving = false;
+		isTracking = false;
 		player = GameObject.Find ("Player");
+		StartCoroutine ("StartTracking");
     }
 	
 	// Update is called once per frame
 	void Update () {
 		Move ();
     }
-
+	
     public void CheckDirection()
     {
         Vector2 upStart, leftStart, downStart, rightStart;
@@ -81,7 +82,6 @@ public class Enemies : MonoBehaviour {
                 canLeft = false;
                 Vector3 theScale = transform.localScale;
 
-
                 //turns scale negative on wall impact (to change sprite direction)
                 if (!canLeft && theScale.x > 0)
                 {
@@ -91,7 +91,6 @@ public class Enemies : MonoBehaviour {
             }
             else
                 canLeft = true;
-
         }
         else
             canLeft = true;
@@ -123,7 +122,6 @@ public class Enemies : MonoBehaviour {
         Vector2 leftTarget = new Vector2(transform.position.x - 10f, transform.position.y);
         Vector2 rightTarget = new Vector2(transform.position.x + 10f, transform.position.y);
 
-       
         if (canUp)
             targets.Add(upTarget);
         if (canDown)
@@ -137,19 +135,35 @@ public class Enemies : MonoBehaviour {
         if (targets.Count > 0)
             targetPos = targets[rand];
         targets.Clear();
-        
+	}
+
+	IEnumerator StartTracking(){
+		float delay = Random.Range (1, 6);
+		yield return new WaitForSeconds (delay);
+		isTracking = true;
 	}
 
 	void Move(){
-		if (!isMoving) {
-			CheckDirection ();
-			isMoving = true;
+		if (isTracking) {
+			a.SetBool ("Phase",true);
+			transform.position = Vector3.MoveTowards (transform.position, player.transform.position, speed * Time.deltaTime);
+			if (Vector3.Distance (transform.position,player.transform.position) <= 20f){
+				isTracking = false;
+				CheckDirection();
+				StartCoroutine ("StartTracking");
+			}
 		}
 		else {
-			if(!player.GetComponent<CharacterMovement>().isDead){
-				transform.position = Vector2.MoveTowards (transform.position,targetPos,speed*Time.deltaTime);
-				if ((Vector2)transform.position == targetPos)
-					isMoving = false;
+			if (!isMoving) {
+				CheckDirection ();
+				isMoving = true;
+				a.SetBool ("Phase",false);
+			} else {
+				if (!player.GetComponent<CharacterMovement> ().isDead) {
+					transform.position = Vector2.MoveTowards (transform.position, targetPos, speed * .7f * Time.deltaTime);
+					if ((Vector2)transform.position == targetPos)
+						isMoving = false;
+				}
 			}
 		}
 	}

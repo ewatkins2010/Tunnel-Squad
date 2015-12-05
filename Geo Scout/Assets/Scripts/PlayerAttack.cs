@@ -27,7 +27,7 @@ public class PlayerAttack : MonoBehaviour {
 		switch(currPower){
 		case 0:
 			a.SetBool ("PowerDown", false);
-			if (Input.GetKey (KeyCode.U)){
+			if (Input.GetKeyDown (KeyCode.U) || Input.GetKeyDown (KeyCode.Z)){
 				isSucking = true;
 				a.SetBool ("Suck", true);
 				vacuum.SetActive(true);
@@ -43,7 +43,7 @@ public class PlayerAttack : MonoBehaviour {
 			isSucking = false;
 			a.SetBool ("Suck",false);
 			vacuum.SetActive (false);
-			if (Input.GetKeyDown (KeyCode.U)) {
+			if (Input.GetKeyDown (KeyCode.U) || Input.GetKeyDown (KeyCode.Z)) {
 				a.SetTrigger ("Blue");
 				if (pMove.isUp)
 					Instantiate (powers[1],transform.position+ (Vector3.up*5), transform.rotation);
@@ -60,7 +60,7 @@ public class PlayerAttack : MonoBehaviour {
 			isSucking = false;
 			a.SetBool ("Suck",false);
 			vacuum.SetActive (false);
-			if (Input.GetKeyDown (KeyCode.U)){
+			if (Input.GetKeyDown (KeyCode.U) || Input.GetKeyDown (KeyCode.Z)){
 				if (!statsUp){
 					a.SetBool ("PowerDown", false);
 					a.SetTrigger ("Yellow");
@@ -74,7 +74,7 @@ public class PlayerAttack : MonoBehaviour {
 			isSucking = false;
 			a.SetBool ("Suck",false);
 			vacuum.SetActive (false);
-			if (Input.GetKeyDown (KeyCode.U)){
+			if (Input.GetKeyDown (KeyCode.U) || Input.GetKeyDown (KeyCode.Z)){
 				if (!statsUp){
 					a.SetBool ("PowerDown", false);
 					a.SetTrigger ("Purple");

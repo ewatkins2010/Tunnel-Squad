@@ -40,7 +40,7 @@ public class SpawnedObject : MonoBehaviour {
 	IEnumerator GoToNextLevel(){
 		if (clearImage != null) {
 			GameObject hud = GameObject.Find ("HUD");
-			GameObject image = Instantiate (clearImage, new Vector3(-83,0,0), hud.transform.rotation) as GameObject;
+			GameObject image = Instantiate (clearImage, new Vector3(-84,0,0), hud.transform.rotation) as GameObject;
 			image.transform.SetParent (hud.transform, false);
 		}
 		AudioSource a = GameObject.Find ("RoundClear").GetComponent<AudioSource> ();

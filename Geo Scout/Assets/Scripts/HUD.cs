@@ -22,6 +22,7 @@ public class HUD : MonoBehaviour {
 		SwapPowers (0);
 
 		manager.GetComponent<GameManager> ().SpawnObjects ();
+		manager.GetComponent<GameManager> ().SpawnGems ();
 		score = manager.GetComponent<GameManager> ().score;
 		numLives = manager.GetComponent<GameManager> ().lives;
 	}

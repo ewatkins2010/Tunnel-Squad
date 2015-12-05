@@ -42,7 +42,7 @@ public class Projectile : MonoBehaviour {
 				Destroy (c.gameObject);
 			}
 		}
-		if (c.gameObject.tag == "Dirt" && projectileIndex == 1)
-			Destroy (gameObject);
+		if (c.gameObject.tag == "Dirt")
+			Destroy (c.gameObject);
 	}
 }
